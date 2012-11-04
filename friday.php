@@ -22,6 +22,13 @@
 
 		$month = 1;
 	}
+	if(isset($_POST["year"])){
+
+		$year = $_POST["year"];
+	} else {
+
+		$year = 2009;
+	}
 
 	//$sqlString = "SELECT username, COUNT(*) as convoCount FROM conversations WHERE year = 2008 AND username != 'Me' GROUP BY username";
 	//echo $sqlString;
@@ -36,7 +43,7 @@
 
 	// Database Queries
 	
-	$query = mysql_query("SELECT username, COUNT(*) as friday FROM conversations WHERE year = 2009 AND month = ". $month . " AND weekday = 4 AND username != 'Me' AND username != 'aolsystemmsg' GROUP BY username") or die(mysql_errno($connection));
+	$query = mysql_query("SELECT username, COUNT(*) as day FROM conversations WHERE year = ". $year . " AND month = ". $month . " AND weekday = 4 AND username != 'Me' AND username != 'aolsystemmsg' GROUP BY username") or die(mysql_errno($connection));
 		
 	//************ End Working ************
 

@@ -34,19 +34,6 @@
 		$year = 2009;
 	}
 
-	if(isset($_POST["weekday"])){
-
-		$weekday = $_POST["weekday"];
-		$weekdayQuery = "AND weekday = ". $weekday . "\"";
-
-	file_put_contents($file, $current);
-	} else {
-
-		$weekday = Null;
-		$weekdayQuery = "";
-	}
-
-
 	//$sqlString = "SELECT username, COUNT(*) as convoCount FROM conversations WHERE year = 2008 AND username != 'Me' GROUP BY username";
 	//echo $sqlString;
 
